@@ -1,0 +1,18 @@
+[tool.black]
+line-length = 79
+exclude = '''
+(
+  /(  # generated files
+    .tox|
+    venv|
+    exporter/opentelemetry-exporter-jaeger-proto-grpc/src/opentelemetry/exporter/jaeger/proto/grpc/gen|
+    exporter/opentelemetry-exporter-jaeger-thrift/src/opentelemetry/exporter/jaeger/thrift/gen|
+    exporter/opentelemetry-exporter-zipkin-proto-http/src/opentelemetry/exporter/zipkin/proto/http/v2/gen|
+    opentelemetry-proto/src/opentelemetry/proto/.*/.*
+  )/
+)
+'''
+[tool.pytest.ini_options]
+addopts = "-rs -v"
+log_cli = true
+log_cli_level = "warning"
